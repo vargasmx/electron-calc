@@ -1,0 +1,16 @@
+{
+  "name": "electron-calc",
+  "version": "1.0.0",
+  "description": "Calculadora básica",
+  "homepage": "https://github.com/vargasmx/electron-calc",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alejandro Vargas <alejandrovargasc@gmail.com>",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/vargasmx/electron-calc.git"
+  },
+  "license": "ISC"
+}

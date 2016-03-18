@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculadora</title>
+    </head>
+    <style>
+        .calc-button{
+            width: 80px;
+            height: 80px;
+        }  
+        .calc-button-2h{
+            width: 164px;
+            height: 80px;
+        } 
+        .calc-button-2v{
+            width: 80px;
+            height: 164px;
+        }
+        .display{
+            border: 3px solid black;
+            width: 320px;
+            height: 76px;
+            padding: 6px;
+        }
+    </style>
+    <body>
+        <div id="app-container">
+            <div id="calc-display" class="display">
+                <div id="num-display" style="background-color: gray; text-align: right;">0</div>
+            </div>
+            <div id="calc-buttons">
+                <table id="buttons">
+                    <tbody>
+                    <tr>
+                        <td><button id="ac" class="calc-button">AC</button></td>
+                        <td><button id="div" class="calc-button">/</button></td>
+                        <td><button id="mul" class="calc-button">*</button></td>
+                        <td><button id="min" class="calc-button">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button id="num7" onclick="numero(this);" class="calc-button">7</button></td>
+                        <td><button id="num8" onclick="numero(this);" class="calc-button">8</button></td>
+                        <td><button id="num9" onclick="numero(this);" class="calc-button">9</button></td>
+                        <td rowspan="2">
+                            <button id="sum" class="calc-button-2v">+</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button id="num4" onclick="numero(this);" class="calc-button">4</button></td>
+                        <td><button id="num5" onclick="numero(this);" class="calc-button">5</button></td>
+                        <td><button id="num6" onclick="numero(this);" class="calc-button">6</button></td>
+                        <!-- <td></td> -->
+                    </tr>
+                    <tr>
+                        <td><button id="num1" onclick="numero(this);" class="calc-button">1</button></td>
+                        <td><button id="num2" onclick="numero(this);" class="calc-button">2</button></td>
+                        <td><button id="num3" onclick="numero(this);" class="calc-button">3</button></td>
+                        <td rowspan="2">
+                            <button id="intro" class="calc-button-2v">=</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button id="num0" class="calc-button-2h">0</button>
+                        </td>
+                        <!-- <td></td> -->
+                        <td><button id="dot" class="calc-button">.</button></td>
+                        <!-- <td></td> -->
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <input id="temp" type="hidden" readonly="readonly" value="0" />
+        <script>
+            function numero(buttonClicked){
+                var num = (buttonClicked.id).substring(3,4);
+                console.log("Num: " + num);
+                var temp = document.getElementById("temp").value;
+                if(temp == 0){
+                    temp = num;
+                } else {
+                    temp += ""+num;
+                }
+                document.getElementById("temp").value = temp;
+                document.getElementById("num-display").innerHTML = temp;
+                console.log("Temp: " + temp);
+            }
+        </script>
+    </body>
+</html>
