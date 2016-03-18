@@ -6,4 +6,4 @@ Instalar localmente el paquete:
   
 Una vez instalado el paquete para ejecutar la aplicación
 
-  >.\node_modules\.bin\electron .
+  >.\node_modules\\.bin\electron .
